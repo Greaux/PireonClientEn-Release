@@ -915,29 +915,16 @@ UI_LoadButtonImage( btnYes, "texture/ui/PublicC.tga", 41, 19, 0, 0, TRUE )
 btnNo = UI_CreateCompent( frmTeamPK, BUTTON_TYPE, "btnNo", 41, 19, 279, 382 )
 UI_LoadButtonImage( btnNo, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 
-
-
-
-
-
-
-
-
-
 --frmDetail
 
-frmTargetInfo = UI_CreateForm( "frmTargetInfo", FALSE, 166, 33, 200, 4, TRUE, FALSE )
+frmTargetInfo = UI_CreateForm( "frmTargetInfo", FALSE, 166, 33 + 17, 200, 4, TRUE, FALSE )
 --UI_FormSetHotKey( frmTargetInfo, ALT_KEY, HOTKEY_U ) 
-
-
 
 imgBackDropTarget = UI_CreateCompent( frmTargetInfo, IMAGE_TYPE, "imgBackDropTarget", 40, 30, 3, 0 )
 UI_LoadImage( imgBackDropTarget, "texture/ui/Corsairs/npcBackDrop/0.tga", NORMAL, 55, 44, 0, 0 )
 
-
 imgTargetInfo = UI_CreateCompent( frmTargetInfo, IMAGE_TYPE, "imgTargetInfo", 166, 33, 0, 0 )
 UI_LoadImage( imgTargetInfo, "texture/ui/corsairs/new3.tga", NORMAL, 166, 33, 0, 84 )
-
 
 --UI_LoadFormImage( frmTargetInfo, "texture/ui/corsairs/new3.tga", 166, 33, 0, 84, "", 0, 0 )
 UI_ShowForm( frmTargetInfo, TRUE )
@@ -958,8 +945,4 @@ UI_SetTextColor( labTargetLv, COLOR_WHITE )
 UI_SetLabelExFont( labTargetLv, DEFAULT_FONT, TRUE, COLOR_BLACK )
 UI_SetCaption( labLv, "99" )
 
-
 d3dTarget = UI_CreateCompent( frmTargetInfo, UI3D_COMPENT_TYPE, "d3dTarget", 23, 23, 6, 6 )
-
-
-

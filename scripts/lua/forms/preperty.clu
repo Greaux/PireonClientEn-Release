@@ -1,22 +1,17 @@
-
------------------------------------------------------------------------
--- ¶¨Òå½ÇÉ«ÊôÐÔ
------------------------------------------------------------------------
+--Create Form Character Status Window
 frmState = UI_CreateForm( "frmState", FALSE, 198, 394, 0, 160, TRUE, FALSE )
 UI_FormSetHotKey( frmState, ALT_KEY, HOTKEY_A )
 UI_ShowForm( frmState, FALSE )
 UI_AddFormToTemplete( frmState, 1 )
 UI_SetIsDrag( frmState, TRUE )
---UI_SetFormStyle( frmState, 0 )
---UI_SetAlpha( frmState, 200 )
 
--- ¼ÓÔØ±³¾°Í¼Æ¬
 imgBakTop = UI_CreateCompent( frmState, IMAGE_TYPE, "imgBakTop", 198, 256, 0, 0 )
 UI_LoadImage( imgBakTop, "texture/ui/PublicD.bmp", NORMAL, 198, 256, 0, 0 )
+
 imgBakDown = UI_CreateCompent( frmState, IMAGE_TYPE, "imgBakDown", 198, 138, 0, 256 )
 UI_LoadImage( imgBakDown, "texture/ui/PublicD2.bmp", NORMAL, 198, 138, 0, 0 )
 
---¼ÓÔØÊôÐÔÍ¼Æ¬
+--åŠ è½½å±žæ€§å›¾ç‰‡
 imgStateTop = UI_CreateCompent( frmState, IMAGE_TYPE, "imgStateTop", 184, 87, 7, 37 )
 UI_LoadImage( imgStateTop, "texture/ui/corsairs/State1.png", NORMAL, 184, 87, 0, 0 )
 
@@ -35,23 +30,19 @@ UI_LoadImage( imgStateR, "texture/ui/PublicC.tga", NORMAL, 8, 8, 167, 0 )
 imgStateD = UI_CreateCompent( frmState, IMAGE_TYPE, "imgStateD", 184, 43, 7, 322 )
 UI_LoadImage( imgStateD, "texture/ui/ShipBuild2.tga", NORMAL, 184, 43, 0, 172 )
 
---´´½¨ÏòÏÂ°´Å¥
---btnDown = UI_CreateCompent( frmState, BUTTON_TYPE, "btnDown", 20, 20, 167, 368)
---UI_LoadButtonImage( btnDown, "texture/ui/PublicC.tga", 20, 20, 228, 140, FALSE )
-
---´´½¨¹Ø±Õ°´Å¥
+--Create Close Button
 btnClose = UI_CreateCompent( frmState, BUTTON_TYPE, "btnClose", 14, 14, 177, 3 )
 UI_LoadButtonImage( btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE )
 UI_SetButtonModalResult( btnClose, BUTTON_CLOSE )
 
--- ¼ÓÔØ½çÃætitle
+
+-- Window title
 labTitle = UI_CreateCompent( frmState, LABELEX_TYPE, "labTitle", 400, 150, 10, 3 )
 UI_SetCaption( labTitle, "Character")
 UI_SetTextColor( labTitle, COLOR_BLACK )
 UI_SetLabelExFont( labTitle, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-
---´´½¨½ÇÉ«Ãû³Æ
+--Create Name Text
 imgBakName = UI_CreateCompent( frmState, IMAGE_TYPE, "imgBakName", 129, 13, 32, 22 )
 UI_LoadImage( imgBakName, "texture/ui/SystemBotton3.tga", NORMAL, 129, 13, 0, 227 )
 
@@ -60,150 +51,158 @@ UI_SetCaption( labStateName, "Child of Demon what is that" )
 UI_SetTextColor( labStateName, COLOR_BLACK )
 UI_SetLabelExFont( labStateName, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨½ÇÉ«Ö°Òµ
+--btn name mothannakh--
+btnChangeName = UI_CreateCompent(frmState, BUTTON_TYPE, "btnChangeName", 13, 13, 169,23 )
+UI_LoadImage( btnChangeName, "texture/UI/corsairs/coButtons.png", 0, 15, 16, 215, 50 )
+UI_LoadImage( btnChangeName, "texture/UI/corsairs/coButtons.png", 1, 15, 16, 230, 50 )
+UI_LoadImage( btnChangeName, "texture/UI/corsairs/coButtons.png", 2, 15, 16, 245, 50 )
+UI_SetHint(btnChangeName, "Change Your Name for 15 Crystal")
+
+
+--Create Class Text
 labStateJob = UI_CreateCompent( frmState, LABELEX_TYPE, "labStateJob", 47, 11, 90, 46 )
---UI_SetCaption( labStateJob, "Warrior" )
 UI_SetTextColor( labStateJob, COLOR_BLACK )
 UI_SetLabelExFont( labStateJob, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨ËùÊô¹¤»á
+--Create Guild Text
 labStateGuid = UI_CreateCompent( frmState, LABELEX_TYPE, "labStateGuid", 128, 11, 69, 60 )
---UI_SetCaption( labStateGuid, "game developer" )
 UI_SetTextColor( labStateGuid, COLOR_BLACK )
 UI_SetLabelExFont( labStateGuid, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨µÈ¼¶
+--Create Level Text
 labStateLevel  = UI_CreateCompent( frmState, LABELEX_TYPE, "labStateLevel", 22, 10, 40, 77 )
 UI_SetCaption( labStateLevel, "22" )
 UI_SetTextColor( labStateLevel, COLOR_PURPLE )
 UI_SetLabelExFont( labStateLevel, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨¾­Ñé
+--Create Experience Text
 labStateEXP = UI_CreateCompent( frmState, LABELEX_TYPE, "labStateEXP", 45, 10, 124, 77 )
 UI_SetCaption( labStateEXP, "11" )
 UI_SetTextColor( labStateEXP, COLOR_PURPLE )
 UI_SetLabelExFont( labStateEXP, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨×ªÉúµÈ¼¶
+--Create Text reincarnation level
 labSailLevel  = UI_CreateCompent( frmState, LABELEX_TYPE, "labSailLevel", 22, 10, 40, 92 )
---UI_SetCaption( labSailLevel, "22" )
 UI_SetTextColor( labSailLevel, COLOR_RED_SP )
 UI_SetLabelExFont( labSailLevel, DEFAULT_FONT, TRUE, COLOR_BLUE )
 UI_SetHint(labSailLevel,"Rebirth Level")
 
---´´½¨×ªÉú¾­Ñé
+--Create Text reincarnation Experience
 labSailEXP = UI_CreateCompent( frmState, LABELEX_TYPE, "labSailEXP", 45, 10, 129, 92 )
---UI_SetCaption( labSailEXP, "9999999999" )
 UI_SetTextColor( labSailEXP, COLOR_RED_SP )
 UI_SetLabelExFont( labSailEXP, DEFAULT_FONT, TRUE, COLOR_BLUE )
 UI_SetHint(labSailEXP,"Rebirth Experience points")
 
---´´½¨HP
+--Create Text HP
 labStateHP  = UI_CreateCompent( frmState, LABELEX_TYPE, "labStateHP", 45, 10, 40, 106 )
 UI_SetCaption( labStateHP, "9999/9999" )
 UI_SetTextColor( labStateHP, COLOR_PURPLE )
 UI_SetLabelExFont( labStateHP, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨SP
+--Create Text SP
 labStateSP  = UI_CreateCompent( frmState, LABELEX_TYPE, "labStateSP", 45, 10, 124, 106 )
 UI_SetCaption( labStateSP, "9999/9999" )
 UI_SetTextColor( labStateSP, COLOR_PURPLE )
 UI_SetLabelExFont( labStateSP, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
-
---´´½¨ÊôÐÔµãÊý
+--Create attribute points Text
 labStatePoint  = UI_CreateCompent( frmState, LABELEX_TYPE, "labStatePoint", 35, 13, 152, 139 )
 UI_SetCaption( labStatePoint, "1500" )
 UI_SetTextColor( labStatePoint, COLOR_PURPLE )
 UI_SetLabelExFont( labStatePoint, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨¼¼ÄÜµãÊý
+--Create Skill points Text
 labSkillPoint  = UI_CreateCompent( frmState, LABELEX_TYPE, "labSkillPoint", 35, 13, 64, 139 )
 UI_SetCaption( labSkillPoint, "300" )
 UI_SetTextColor( labSkillPoint, COLOR_PURPLE )
 UI_SetLabelExFont( labSkillPoint, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨Á¦Á¿À¸
+--Create Str Plus Button
 btnStr = UI_CreateCompent( frmState, BUTTON_TYPE, "btnStr", 10, 11, 87, 179 )
 UI_LoadButtonImage( btnStr, "texture/ui/PublicC.tga", 10, 11, 195, 238, TRUE )
 UI_SetHint( btnStr, "Strength increases Melee attack power" )
 
+--Create Str Text
 labStrshow = UI_CreateCompent( frmState, LABELEX_TYPE, "labStrshow", 23, 8, 49, 175 )
 UI_SetCaption( labStrshow, "9527" )
 UI_SetTextColor( labStrshow, COLOR_PURPLE )
 UI_SetLabelExFont( labStrshow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨Ãô½ÝÀ¸
+--Create Agi Plus Button
 btnAgi = UI_CreateCompent( frmState, BUTTON_TYPE, "btnAgi", 10, 11, 175, 179 )
 UI_LoadButtonImage( btnAgi, "texture/ui/PublicC.tga", 10, 11, 195, 238, TRUE )
 UI_SetHint( btnAgi, "Agility increases Attack speed and Dodge rate" )
 
+--Create Agi Text
 labAgishow = UI_CreateCompent( frmState, LABELEX_TYPE, "labAgishow", 23, 8, 135, 175 )
 UI_SetCaption( labAgishow, "9527" )
 UI_SetTextColor( labAgishow, COLOR_PURPLE )
 UI_SetLabelExFont( labAgishow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨ÌåÖÊÀ¸
+--Create Con Plus Button
 btnCon = UI_CreateCompent( frmState, BUTTON_TYPE, "btnCon", 10, 11, 87, 195 )
 UI_LoadButtonImage( btnCon, "texture/ui/PublicC.tga", 10, 11, 195, 238, TRUE )
 UI_SetHint( btnCon, "Constitution increases Defense, Max HP and HP recovery rate" )
 
+--Create Con Text
 labConshow = UI_CreateCompent( frmState, LABELEX_TYPE, "labConshow", 23, 8, 49, 191 )
 UI_SetCaption( labConshow, "9527" )
 UI_SetTextColor( labConshow, COLOR_PURPLE )
 UI_SetLabelExFont( labConshow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨¾«ÉñÀ¸
+--Create Spr Plus Button
 btnSta = UI_CreateCompent( frmState, BUTTON_TYPE, "btnSta", 10, 11, 175, 195 )
 UI_LoadButtonImage( btnSta, "texture/ui/PublicC.tga", 10, 11, 195, 238, TRUE )
 UI_SetHint( btnSta, "Spirit increases Max SP and SP recovery rate" )
 
+--Create Spr Text
 labStashow = UI_CreateCompent( frmState, LABELEX_TYPE, "labStashow", 23, 8, 135, 191 )
 UI_SetCaption( labStashow, "9527" )
 UI_SetTextColor( labStashow, COLOR_PURPLE )
 UI_SetLabelExFont( labStashow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨×¨×¢À¸
+--Create Acc Plus Button
 btnDex = UI_CreateCompent( frmState, BUTTON_TYPE, "btnDex", 10, 11, 87, 211 )
 UI_LoadButtonImage( btnDex, "texture/ui/PublicC.tga", 10, 11, 195, 238, TRUE )
 UI_SetHint( btnDex, "Accuracy increases Range attack power and Hit Rate" )
 
+--Create Acc Text
 labDexshow = UI_CreateCompent( frmState, LABELEX_TYPE, "labDexshow", 23, 8, 49, 207 )
 UI_SetCaption( labDexshow, "9527" )
 UI_SetTextColor( labDexshow, COLOR_PURPLE )
 UI_SetLabelExFont( labDexshow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨×îÐ¡¹¥»÷
+--Create Text Min Attack
 labMinAtackShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labMinAtackShow", 22, 8, 75, 248 )
 UI_SetCaption( labMinAtackShow, "95278" )
 UI_SetTextColor( labMinAtackShow, COLOR_PURPLE )
 UI_SetLabelExFont( labMinAtackShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨×î´ó¹¥»÷
+--Create Text Max Attack
 labMaxAtackShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labMaxAtackShow", 22, 8, 159, 248 )
 UI_SetCaption( labMaxAtackShow, "95278" )
 UI_SetTextColor( labMaxAtackShow, COLOR_PURPLE )
 UI_SetLabelExFont( labMaxAtackShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨ÃüÖÐ
+--Create Text Hit Rate
 labHitShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labHitShow", 22, 8, 75, 264 )
 UI_SetCaption( labHitShow, "400" )
 UI_SetTextColor( labHitShow, COLOR_PURPLE )
 UI_SetLabelExFont( labHitShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨ÉÁ±Ü
+--Create Text Dodge
 labFleeShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labFleeShow", 22, 8, 159, 264 )
 UI_SetCaption( labFleeShow, "400" )
 UI_SetTextColor( labFleeShow, COLOR_PURPLE )
 UI_SetLabelExFont( labFleeShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨·ÀÓù
+--Create Text Defense
 labDefenceShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labDefenceShow", 22, 8, 75, 281 )
 UI_SetCaption( labDefenceShow, "4000" )
 UI_SetTextColor( labDefenceShow, COLOR_PURPLE )
 UI_SetLabelExFont( labDefenceShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨¹¥ËÙ
+--Create Text Atk Speed
 labAspeedShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labAspeedShow", 22, 8, 159, 281 )
 UI_SetCaption( labAspeedShow, "400" )
 UI_SetTextColor( labAspeedShow, COLOR_PURPLE )
@@ -214,47 +213,19 @@ UI_SetCaption( labMspeedShow, "400" )
 UI_SetTextColor( labMspeedShow, COLOR_PURPLE )
 UI_SetLabelExFont( labMspeedShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨ÎïÁ¦µÖ¿¹
+--Create Text physical resistance
 labPhysDefineShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labPhysDefineShow", 22, 8, 75, 296 )
 UI_SetCaption( labPhysDefineShow, "400" )
 UI_SetTextColor( labPhysDefineShow, COLOR_PURPLE )
 UI_SetLabelExFont( labPhysDefineShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨ÃûÉù
+--Create Text Reputation
 labFameShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labFameShow", 26, 8, 75, 347 )
 UI_SetCaption( labFameShow, "0" )
 UI_SetTextColor( labFameShow, COLOR_PURPLE )
 UI_SetLabelExFont( labFameShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---´´½¨³ÆºÅ
+--Create Text Title
 labTitleShow  = UI_CreateCompent( frmState, LABELEX_TYPE, "labTitleShow", 71, 11, 111, 348 )
---UI_SetCaption( labTitleShow, "0" )
 UI_SetTextColor( labTitleShow, COLOR_BLACK )
 UI_SetLabelExFont( labTitleShow, DEFAULT_FONT, TRUE, COLOR_WHITE )
-
---´´½¨³ÆºÅÑ¡Ôñ
---cboAppellationShow  = UI_CreateCompent( frmState, COMBO_TYPE, "cboAppellationShow", 110, 20, 77, 368 )
---lstAppellation = UI_GetList( cboAppellationShow )
---UI_SetSize( lstAppellation, 110, 170 )
---UI_LoadImage( lstAppellation, "texture/ui/QQ.dds", COMPENT_BACK, 142, 170, 0, 0 )
-
---»ñµÃ¹ö¶¯Ìõ
---scrollid = UI_GetScroll( lstAppellation )
---UI_SetSize( scrollid, 11, 1 )
---UI_LoadImage( scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13 )
-
---¼ÓÔØÏòÉÏ°´Å¥
---id = UI_GetScrollObj( scrollid, SCROLL_UP )
---UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
---UI_SetSize( id, 11, 9 )
-
---¼ÓÔØ¹ö¶¯Ìõ
---id = UI_GetScrollObj( scrollid, SCROLL_SCROLL )
---UI_LoadImage( id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 43, 166, 10 )
---UI_SetSize( id, 11, 43 )
-
---¼ÓÔØÏòÏÂ°´Å¥
---id = UI_GetScrollObj( scrollid, SCROLL_DOWN )
---UI_LoadButtonImage( id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE )
---UI_SetSize( id, 11, 9 )
-

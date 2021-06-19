@@ -1,7 +1,11 @@
 -----------------------------------------------------------------------
--- 定义loading表单
+---            Login Loading - Loading Animation                   ----
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+-- Define the loading form
 -----------------------------------------------------------------------	
--- 创建loading表单
+-- Create a loading form
 frmLoading = UI_CreateForm( "frmLoading", FALSE, 1198, 768, 0, 0, FALSE, FALSE )
 UI_SetFormStyle( frmLoading , 8 )
 UI_ShowForm( frmLoading, TRUE )
@@ -44,48 +48,40 @@ UI_LoadImage( imgLoading11, "texture/ui/loading/l11.tga", NORMAL, 300, 256, 0, 0
 imgLoading12 = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading12", 300, 256, 900, 512 )
 UI_LoadImage( imgLoading12, "texture/ui/loading/l12.tga", NORMAL, 300, 256, 0, 0 )
 
---定义进度条
+--Define the progress bar 
 imgLoading = UI_CreateCompent( frmLoading, IMAGE_TYPE, "imgLoading", 120,123, 132, 418)
 UI_LoadImage( imgLoading, "texture/ui/LoadProgress.tga", NORMAL, 120,23, 0, 0 )
 
---定义说明
+--Definition description 
 labLoad= UI_CreateCompent( frmLoading, LABELEX_TYPE, "labLoad", 52, 13, 450, 523 )
 UI_SetCaption( labLoad, "Loading..." )
 UI_SetTextColor( labLoad, COLOR_WHITE )
---UI_SetLabelExFont( labLoad, DEFAULT_FONT, TRUE, COLOR_WHITE)
 -----------------------------------------------------------------------
--- 定义连接服务器表单
+-- Loading Conection
 -----------------------------------------------------------------------	
--- 创建连接服务器表单
+-- Create a connection server form
 frmConnect = UI_CreateForm( "frmConnect", FALSE, 198, 72, 396, 80, FALSE, FALSE )
 UI_LoadFormImage( frmConnect, "texture/ui/SysBotton2.dds", 198, 72, 0, 111, "", 0, 0 )
---UI_FormSetHotKey( frmConnect, ALT_KEY, HOTKEY_L ) 
 UI_SetFormStyle( frmConnect, 1 )
 UI_AddFormToTemplete( frmConnect, FORM_SWITCH_SCENE )
 UI_FormSetIsEscClose( frmConnect, FALSE )
 
---创建连接信息
 labConnect = UI_CreateCompent( frmConnect, LABELEX_TYPE, "labConnect", 52, 13, 70, 24 )
-UI_SetCaption( labConnect, "Please wait…" )
+UI_SetCaption( labConnect, "Please wait..." )
 UI_SetTextColor( labConnect, COLOR_BLACK )
 UI_SetLabelExFont( labConnect, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
---创建loading进度
+--Create loading progress
 imgLoading = UI_CreateCompent( frmConnect, IMAGE_FLASH_TYPE, "imgLoading", 135, 8, 20, 51 )
 UI_LoadScaleImage( imgLoading, "texture/ui/SysBotton2.dds", 0, 26, 8, 20, 185, 1.0, 1.0 )
-
-
-
 -----------------------------------------------------------------------
--- 定义界面说明表单
+-- Define interface description form
 -----------------------------------------------------------------------	
--- 创建界面说明表单
+-- Create interface description form 
 frmVHelp = UI_CreateForm( "frmVHelp", FALSE, 936, 600, 0, 0, TRUE, FALSE )
 UI_AddFormToTemplete( frmVHelp, FORM_MAIN )
 UI_ShowForm( frmVHelp, TRUE )
 UI_FormSetIsEscClose( frmVHelp, FALSE )
---UI_FormSetHotKey( frmVHelp, ALT_KEY, HOTKEY_U )
-
 
 imgLoading1 = UI_CreateCompent( frmVHelp, IMAGE_TYPE, "imgLoading1", 256, 256, 0, 0 )
 UI_LoadImage( imgLoading1, "texture/ui/f1.tga", NORMAL, 256, 256, 0, 0 )
@@ -126,9 +122,6 @@ UI_LoadImage( imgLoading13, "texture/ui/f9.tga", NORMAL, 128, 88, 0, 0 )
 imgLoading12 = UI_CreateCompent( frmVHelp, IMAGE_TYPE, "imgLoading12", 32, 88, 768, 512 )
 UI_LoadImage( imgLoading12, "texture/ui/f9.tga", NORMAL, 32, 88, 160, 168 )
 
---创建关闭按钮
+--Create a close button 
 btnClose = UI_CreateCompent( frmVHelp, BUTTON_TYPE, "btnClose", 222, 78, 50, 400 )
 UI_LoadButtonImage( btnClose, "texture/ui/f10.tga", 222, 78, 0, 0, FALSE )
-
-
-

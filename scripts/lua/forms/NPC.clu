@@ -653,6 +653,13 @@ UI_SetCaption( labForgeGold, "" )
 UI_SetTextColor( labForgeGold, COLOR_BLACK )
 UI_SetLabelExFont( labForgeGold, DEFAULT_FONT, TRUE, COLOR_WHITE )
 
+labForgePersent = UI_CreateCompent( frmMakeEquip, LABELEX_TYPE, "labForgePersent", 40, 13, 94, 257 )
+UI_SetCaption( labForgePersent, "" )
+UI_SetTextColor( labForgePersent, COLOR_BLACK )
+UI_SetLabelExFont( labForgePersent, DEFAULT_FONT, TRUE, COLOR_WHITE )
+UI_SetAlign( labForgePersent, caWidthCenter )
+UI_SetHint( labForgePersent, "Persent success" )
+
 --创建物品属性显示
 memForgeItemState = UI_CreateCompent( frmMakeEquip, MEMO_TYPE, "memForgeItemState", 180, 77, 24, 286 )
 UI_SetTextColor( memForgeItemState, COLOR_BLACK )

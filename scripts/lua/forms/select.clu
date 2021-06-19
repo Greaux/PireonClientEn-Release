@@ -850,7 +850,7 @@ edtCha = UI_CreateCompent( frmGMLogin, EDIT_TYPE, "edtCha", 100, 12, 48, 53 )
 UI_SetTextColor( edtCha, COLOR_BLACK )
 UI_SetEditMaxNum( edtCha, 16 )
 UI_SetEditMaxNumVisible( edtCha, 16 )
-UI_SetCaption(edtCha,"pppp")
+UI_SetCaption(edtCha,"")
 
 -- Confirm Button
 btnGMLogin = UI_CreateCompent( frmGMLogin, BUTTON_TYPE, "btnGMLogin", 41, 19, 60, 83 )
@@ -861,6 +861,3 @@ UI_SetButtonModalResult( btnGMLogin, BUTTON_CLOSE )
 btnCancel = UI_CreateCompent( frmGMLogin, BUTTON_TYPE, "btnCancel", 41, 19, 130, 83 )
 UI_LoadButtonImage( btnCancel, "texture/ui/PublicC.tga", 41, 19, 0, 20, TRUE )
 UI_SetButtonModalResult( btnCancel, BUTTON_CLOSE )
-
-
-

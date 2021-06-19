@@ -1,5 +1,9 @@
-logfile/log/comm.log
-user/checkid.txt
+*.log
+lua_err.txt
 user/username.txt
-log/LGMgr.log
-log/tex.log
+calua_err.txt
+startgame.bat
+log1/exception.txt
+log3/exception.txt
+user/system.ini
+user/checkid.txt

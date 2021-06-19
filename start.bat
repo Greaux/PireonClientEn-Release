@@ -1,1 +1,1 @@
-start system\Game.exe startgame ip:srv1.pireon.pro
+start system\Game.exe PireON

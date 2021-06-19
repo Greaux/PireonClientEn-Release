@@ -1,5 +1,3 @@
-
---精炼效果表示
 function Item_Stoneeffect ( Stone_Type1 , Stone_Type2 , Stone_Type3 )
 	if Stone_Type1 == Stone_Type2 then
 		Stone_Type1 = -1
@@ -53,17 +51,11 @@ function Item_Stoneeffect ( Stone_Type1 , Stone_Type2 , Stone_Type3 )
 	return 0
 end
 
----------------------------------------------------------------------------------------------------------------------
-
-
---解析精炼内容
-
 function GetNum_Part1 ( Num )
 	local a = 0
 	a = math.floor ( Num / 1000000000 )
 	return a
 end
-
 function GetNum_Part2 ( Num )
 	local a = 0
 	local b = 0
@@ -71,7 +63,6 @@ function GetNum_Part2 ( Num )
 	b = math.floor ( a / 10000000 )
 	return b
 end
-
 function GetNum_Part3 ( Num )
 	local a = 0
 	local b = 0
@@ -79,7 +70,6 @@ function GetNum_Part3 ( Num )
 	b = math.floor ( a / 1000000 )
 	return b
 end
-
 function GetNum_Part4 ( Num )
 	local a = 0
 	local b = 0
@@ -87,7 +77,6 @@ function GetNum_Part4 ( Num )
 	b = math.floor ( a / 10000 )
 	return b
 end
-
 function GetNum_Part5 ( Num )
 	local a = 0
 	local b = 0
@@ -95,7 +84,6 @@ function GetNum_Part5 ( Num )
 	b = math.floor ( a / 1000 )
 	return b
 end
-
 function GetNum_Part6 ( Num )
 	local a = 0
 	local b = 0
@@ -103,7 +91,6 @@ function GetNum_Part6 ( Num )
 	b = math.floor ( a / 10 )
 	return b
 end
-
 function GetNum_Part7 ( Num )
 	local a = 0
 	local b = 0
@@ -111,9 +98,6 @@ function GetNum_Part7 ( Num )
 	b = math.floor ( a / 1 )
 	return b
 end
-
-
---写入部分
 
 function SetNum_Part1 ( Num , Part_Num )
 	local a = 0
@@ -123,7 +107,6 @@ function SetNum_Part1 ( Num , Part_Num )
 	Num = Num + b * 1000000000
 	return Num
 end
-
 function SetNum_Part2 ( Num , Part_Num )
 	local a = 0
 	local b = 0
@@ -132,7 +115,6 @@ function SetNum_Part2 ( Num , Part_Num )
 	Num = Num + b * 10000000
 	return Num
 end
-
 function SetNum_Part3 ( Num , Part_Num )
 	local a = 0
 	local b = 0
@@ -141,7 +123,6 @@ function SetNum_Part3 ( Num , Part_Num )
 	Num = Num + b * 1000000
 	return Num
 end
-
 function SetNum_Part4 ( Num , Part_Num )
 	local a = 0
 	local b = 0
@@ -150,7 +131,6 @@ function SetNum_Part4 ( Num , Part_Num )
 	Num = Num + b * 10000
 	return Num
 end
-
 function SetNum_Part5 ( Num , Part_Num )
 	local a = 0
 	local b = 0
@@ -159,7 +139,6 @@ function SetNum_Part5 ( Num , Part_Num )
 	Num = Num + b * 1000
 	return Num
 end
-
 function SetNum_Part6 ( Num , Part_Num )
 	local a = 0
 	local b = 0
@@ -168,7 +147,6 @@ function SetNum_Part6 ( Num , Part_Num )
 	Num = Num + b * 10
 	return Num
 end
-
 function SetNum_Part7 ( Num , Part_Num )
 	local a = 0
 	local b = 0
@@ -178,405 +156,346 @@ function SetNum_Part7 ( Num , Part_Num )
 	return Num
 end
 
-
--------------------------------------------------------------------------------------------------------------------
-
-
---读取洞数
-
 function Get_HoleNum ( Num )
 	local a = GetNum_Part1 ( Num )
 	return a
 end
-
---读取宝石信息
 function Get_Stone_1 ( Num )
 	local Stone_1 = 0
 	Stone_1 = GetNum_Part2 ( Num )
 	return Stone_1
 end
-
 function Get_StoneLv_1 ( Num )
 	local Stone_1 = 0
 	Stone_1 = GetNum_Part3 ( Num )
 	return Stone_1
 end
-
 function Get_Stone_2 ( Num )
 	local Stone_2 = 0
 	Stone_2 = GetNum_Part4 ( Num )
 	return Stone_2
 end
-
 function Get_StoneLv_2 ( Num )
 	local Stone_2 = 0
 	Stone_2 = GetNum_Part5 ( Num )
 	return Stone_2
 end
-
 function Get_Stone_3 ( Num )
 	local Stone_3 = 0
 	Stone_3 = GetNum_Part6 ( Num )
 	return Stone_3
 end
-
 function Get_StoneLv_3 ( Num )
 	local Stone_3 = 0
 	Stone_3 = GetNum_Part7 ( Num )
 	return Stone_3
 end
 
-------------------------------
---Hint对应函数
-function ItemHint_LieYanS ( Lv )
-	local eff = Lv * 4
-	local Hint = "Gem Bonus Attack +"..eff
-	return Hint
-end
-
-function ItemHint_ZhiYanS ( Lv )
-	local eff = Lv * 6
-	local Hint = "Gem Bonus Attack +"..eff
-	return Hint
-end
-
-function ItemHint_HuoYaoS ( Lv )
-	local eff = Lv * 10
-	local Hint = "Gem Bonus Attack +"..eff
-	return Hint
-end
-
-function ItemHint_MaNaoS ( Lv )
-	local eff = Lv * 5
-	local Hint = "Gem Bonus Hit Rate +"..eff
-	return Hint
-end
-
-function ItemHint_HanYu ( Lv )
-	local eff = Lv * 5
-	local Hint = "Gem Bonus Defense +"..eff
-	return Hint
-end
-
-function ItemHint_YueZhiX ( Lv )
-	local eff = Lv * 100
-	local Hint = "Gem Bonus Max HP +"..eff
-	return Hint
-end
-
-function ItemHint_ShuiLingS ( Lv )
-	local eff = Lv * 2
-	local Hint = "Gem Bonus Dodge +"..eff
-	return Hint
-end
-
-function ItemHint_ShengGuangS ( Lv )
-	local eff = Lv * 1
-	local Hint = "Gem Bonus Spirit +"..eff
-	return Hint
-end
-
----2006-02-23 添加
-
-function ItemHint_FengLingS ( Lv )
-	local eff = Lv * 5
-	local Hint = "Gem Bonus Agility +"..eff
-	return Hint
-end
-
-function ItemHint_YingYanS ( Lv )
-	local eff = Lv * 5
-	local Hint = "Added Accuracy"..eff
-	return Hint
-end
-
-function ItemHint_YanVitS ( Lv )
-	local eff = Lv * 5
-	local Hint = "Gem Bonus Constitution +"..eff
-	return Hint
-end
-
-function ItemHint_YanStrS ( Lv )
-	local eff = Lv * 5
-	local Hint = "Gem Bonus Strength +"..eff
-	return Hint
-end
-
-function ItemHint_LongZhiTong ( Lv )
-	local eff = Lv * 50
-	local Hint = "Gem Bonus Attack +"..eff
-	return Hint
-end
-
-function ItemHint_LongZhiHun ( Lv )
-	local eff = Lv * 3
-	local Hint = "Gem Bonus Resist +"..eff
-	return Hint
-end
-
-function ItemHint_LongZhiXin ( Lv )
-	local eff = Lv * 500
-	local Hint = "Gem Bonus Max HP +"..eff
-	return Hint
-end
---2006-09-18添加
-function ItemHint_GaNaZhiShen ( Lv )
-	local eff =  Lv *5
-	local Hint = "Gem Bonus Spirit +"..eff
-	return Hint
-end
---2008-02-20 dina添加
-function ItemHint_HuangYu ( Lv )
-	local eff =  Lv *10
-	local Hint = "Gem Bonus Defense +"..eff
-	return Hint
-end
-
-function ItemHint_ChiYu ( Lv )
-	local eff =  Lv *200
-	local Hint = "Gem Bonus Max HP +"..eff
-	return Hint
-end
-
-function ItemHint_QingYu ( Lv )
-	local eff =  Lv *200
-	local Hint = "Gem Bonus Max SP +"..eff
-	return Hint
-end
---2008-04-24 晓玮添加
-
-function ItemHint_XTLingGuang ( Lv )
-	local eff =  Lv *10
-	local Hint = "Gem Bonus Critical hit-rate +"..eff
-	return Hint
-end
-
-function ItemHint_LKBiZhong ( Lv )
-	local eff =  Lv *10
-	local Hint = "Gem Bonus Hit Rate +"..eff
-	return Hint
-end
-
-function ItemHint_BBDuoShan ( Lv )
-	local eff =  Lv *10
-	local Hint = "Gem Bonus Dodge +"..eff
-	return Hint
-end
-
-function ItemHint_FFDiYu ( Lv )
-	local eff =  Lv *15
-	local Hint = "Gem Bonus Defense +"..eff
-	return Hint
-end
-
-function ItemHint_XKQiangHua ( Lv )
-	local eff =  Lv *300
-	local Hint = "Gem Bonus Max HP +"..eff
-	return Hint
-end
--------高超加
-function ItemHint_SShuiyao ( Lv )
-	local eff =  Lv *8
-	local Hint = "Gem Bonus Strength +"..eff
-	return Hint
-end
-
-function ItemHint_SSbusi ( Lv )
-	local eff =  Lv *8
-	local Hint = "Gem Bonus Constitution +"..eff
-	return Hint
-end
-function ItemHint_SSguangmang ( Lv )
-	local eff =  Lv *8
-	local Hint = "Gem Bonus Spirit +"..eff
-	return Hint
-end
-function ItemHint_SSningju ( Lv )
-	local eff =  Lv *8
-	local Hint = "Gem Bonus Accuracy +"..eff
-	return Hint
-end
-function ItemHint_SSxuanwu ( Lv )
-	local eff =  Lv *8
-	local Hint = "Gem Bonus Agility +"..eff
-	return Hint
-end
---------------------------罂粟花开“金木水火土”石头------------------------
-function ItemHint_JinYanS ( Lv )
-	local eff = Lv * 2
-	local Hint = "Gem Bonus Strength +"..eff
-	return Hint
-end
-function ItemHint_MuYanS ( Lv )
-	local eff = Lv * 2
-	local Hint = "Gem Bonus Spirit +"..eff
-	return Hint
-end
-function ItemHint_ShuiYanS ( Lv )
-	local eff = Lv * 2
-	local Hint = "Added Accuracy +"..eff
-	return Hint
-end
-function ItemHint_HuoYanS ( Lv )
-	local eff = Lv * 2
-	local Hint = "Gem Bonus Agility +"..eff
-	return Hint
-end
-function ItemHint_TuYanS ( Lv )
-	local eff = Lv * 2
-	local Hint = "Gem Bonus Constitution +"..eff
-	return Hint
-end
---------------------------罂粟花开“金木水火土”石头------------------------
-------- by Peter
-function ItemHint_ABOLUO ( Lv )
-	local Hint = "可以解开宙斯的黑匣"
-	return Hint
-end
-
-function ItemHint_QIUBITE ( Lv )
-	local Hint = "可以解开宙斯的黑匣"
-	return Hint
-end
-
-function ItemHint_YADIANNA ( Lv )
-	local Hint = "可以解开宙斯的黑匣"
-	return Hint
-end
-
 function GetElfSkill ( Num )
-
-
-
-end
-
-
-
-----------------------------获取精灵特殊能力----------------------------------------------
-function GetElfSkill ( Num )
-	--local Part1 = GetNum_Part1 ( Num )	--Get Num Part 1 到 Part 7
 	local Part2 = GetNum_Part2 ( Num )
 	local Part3 = GetNum_Part3 ( Num )
 	local Part4 = GetNum_Part4 ( Num )
 	local Part5 = GetNum_Part5 ( Num )
 	local Part6 = GetNum_Part6 ( Num )
 	local Part7 = GetNum_Part7 ( Num )
-
-	return Part3 , Part2 , Part5 , Part4 , Part7 , Part6 
-
+	return Part3 , Part2 , Part5 , Part4 , Part7 , Part6
 end
-function ItemHint_HLS( Lv )	
+
+--Normal Gem
+function ItemHint_FieryGem ( Lv )
+	local eff = Lv * 20
+	local Hint = "Gem Bonus Attack +"..eff
+	return Hint
+end
+function ItemHint_FuriousGem ( Lv )
+	local eff = Lv * 25
+	local Hint = "Gem Bonus Attack +"..eff
+	return Hint
+end
+function ItemHint_ExplosiveGem ( Lv )
+	local eff = Lv * 30
+	local Hint = "Gem Bonus Attack +"..eff
+	return Hint
+end
+function ItemHint_LustriousGem ( Lv )
+	local eff = Lv * 6
+	local Hint = "Gem Bonus Hit Rate +"..eff
+	return Hint
+end
+function ItemHint_GlowingGem ( Lv )
+	local eff = Lv * 15
+	local Hint = "Gem Bonus Defense +"..eff
+	return Hint
+end
+function ItemHint_ShiningGem ( Lv )
+	local eff = Lv * 200
+	local Hint = "Gem Bonus Max HP +"..eff
+	return Hint
+end
+function ItemHint_ShadowGem ( Lv )
+	local eff = Lv * 5
+	local Hint = "Gem Bonus Dodge +"..eff
+	return Hint
+end
+function ItemHint_SpiritGem ( Lv )
+	local eff = Lv * 3
+	local Hint = "Gem Bonus Spirit +"..eff
+	return Hint
+end
+
+--Unique Gem
+function ItemHint_GemOfTheWind ( Lv )
+	local eff = Lv * 5
+	local Hint = "Gem Bonus Agility +"..eff
+	return Hint
+end
+function ItemHint_GemOfStriking ( Lv )
+	local eff = Lv * 5
+	local Hint = "Added Accuracy"..eff
+	return Hint
+end
+function ItemHint_GemOfColossus ( Lv )
+	local eff = Lv * 5
+	local Hint = "Gem Bonus Constitution +"..eff
+	return Hint
+end
+function ItemHint_GemOfRage ( Lv )
+	local eff = Lv * 5
+	local Hint = "Gem Bonus Strength +"..eff
+	return Hint
+end
+function ItemHint_GemOfSoul ( Lv )
+	local eff =  Lv *5
+	local Hint = "Gem Bonus Spirit +"..eff
+	return Hint
+end
+
+--Black Dragon Gem
+function ItemHint_EyeOfBlackDragon ( Lv )
+	local eff = Lv * 75
+	local Hint = "Gem Bonus Attack +"..eff
+	return Hint
+end
+function ItemHint_SoulOfBlackDragon ( Lv )
+	local eff = Lv * 3
+	local Hint = "Gem Bonus Resist +"..eff
+	return Hint
+end
+function ItemHint_HeartOfBlackDragon ( Lv )
+	local eff = Lv * 600
+	local Hint = "Gem Bonus Max HP +"..eff
+	return Hint
+end
+
+--Jades
+function ItemHint_YellowJade ( Lv )
+	local eff =  Lv *20
+	local Hint = "Gem Bonus Defense +"..eff
+	return Hint
+end
+function ItemHint_RedJade ( Lv )
+	local eff =  Lv *200
+	local Hint = "Gem Bonus Max HP +"..eff
+	return Hint
+end
+function ItemHint_GreenJade ( Lv )
+	local eff =  Lv *200
+	local Hint = "Gem Bonus Max SP +"..eff
+	return Hint
+end
+function ItemHint_ChiatansAura ( Lv )
+	local eff =  Lv *5
+	local Hint = "Gem Bonus Critical hit-rate +"..eff
+	return Hint
+end
+
+--Rare Gems
+function ItemHint_LocksHit ( Lv )
+	local eff =  Lv *10
+	local Hint = "Gem Bonus Hit Rate +"..eff
+	return Hint
+end
+function ItemHint_BingsDodging ( Lv )
+	local eff =  Lv *10
+	local Hint = "Gem Bonus Dodge +"..eff
+	return Hint
+end
+function ItemHint_FengsDefense ( Lv )
+	local eff =  Lv *25
+	local Hint = "Gem Bonus Defense +"..eff
+	return Hint
+end
+function ItemHint_SharksStrengthening ( Lv )
+	local eff =  Lv *400
+	local Hint = "Gem Bonus Max HP +"..eff
+	return Hint
+end
+
+--Azrael Gem
+function ItemHint_AzraelsGlare ( Lv )
+	local eff =  Lv *8
+	local Hint = "Gem Bonus Strength +"..eff
+	return Hint
+end
+
+function ItemHint_UndeadAzrael ( Lv )
+	local eff =  Lv *8
+	local Hint = "Gem Bonus Constitution +"..eff
+	return Hint
+end
+function ItemHint_AzraelsLight ( Lv )
+	local eff =  Lv *8
+	local Hint = "Gem Bonus Spirit +"..eff
+	return Hint
+end
+function ItemHint_AzraelsAggregation ( Lv )
+	local eff =  Lv *8
+	local Hint = "Gem Bonus Accuracy +"..eff
+	return Hint
+end
+function ItemHint_AzraelDance ( Lv )
+	local eff =  Lv *8
+	local Hint = "Gem Bonus Agility +"..eff
+	return Hint
+end
+
+--Goddess Gems
+function ItemHint_ApollosSpirit ( Lv )
+	local Hint = ""
+	return Hint
+end
+function ItemHint_CupidsSpirit ( Lv )
+	local Hint = ""
+	return Hint
+end
+function ItemHint_AthenesSpirit ( Lv )
+	local Hint = ""
+	return Hint
+end
+
+--Broken,Cracked,Chipped
+function ItemHint_BrokenGemOfTheWind( Lv )	
 	local eff = Lv * 2	
 	local Hint ="Gem Bonus Agility +"..eff	
 	return Hint	
 end
-
-function ItemHint_HYS( Lv )	
+function ItemHint_CrackedGemOfTheWind( Lv )	
 	local eff = Lv * 3	
 	local Hint ="Gem Bonus Agility +"..eff	
 	return Hint	
 end
-
-function ItemHint_HJS( Lv )	
+function ItemHint_ChippedGemOfTheWind( Lv )	
 	local eff = Lv * 4	
 	local Hint ="Gem Bonus Agility +"..eff	
 	return Hint	
 end
 
-function ItemHint_BLS( Lv )	
+function ItemHint_BrokenGemOfStriking( Lv )	
 	local eff = Lv * 2	
-	local Hint ="Added Accuracy +"..eff	
+	local Hint ="Gem Bonus Accuracy +"..eff	
 	return Hint	
 end
-
-function ItemHint_BYS( Lv )	
+function ItemHint_CrackedGemOfStriking( Lv )	
 	local eff = Lv * 3	
-	local Hint ="Added Accuracy +"..eff	
+	local Hint ="Gem Bonus Accuracy +"..eff	
 	return Hint	
 end
-
-function ItemHint_BJS( Lv )	
+function ItemHint_ChippedGemOfStriking( Lv )	
 	local eff = Lv * 4	
-	local Hint ="Added Accuracy +"..eff	
+	local Hint ="Gem Bonus Accuracy +"..eff	
 	return Hint	
 end
-
-function ItemHint_CLS( Lv )	
+function ItemHint_BrokenGemOfColossus( Lv )	
 	local eff = Lv * 2	
 	local Hint ="Gem Bonus Constitution +"..eff	
 	return Hint	
 end
-
-function ItemHint_CYS( Lv )	
+function ItemHint_CrackedGemOfColossus( Lv )	
 	local eff = Lv * 3	
 	local Hint ="Gem Bonus Constitution +"..eff	
 	return Hint	
 end
-
-function ItemHint_CJS( Lv )	
+function ItemHint_ChippedGemOfColossus( Lv )	
 	local eff = Lv * 4	
 	local Hint ="Gem Bonus Constitution +"..eff	
 	return Hint	
 end
-
-function ItemHint_ZLS( Lv )	
+function ItemHint_BrokenGemOfRage( Lv )	
 	local eff = Lv * 2	
 	local Hint ="Gem Bonus Strength +"..eff	
 	return Hint	
 end
-
-function ItemHint_ZYS( Lv )	
+function ItemHint_CrackedGemOfRage( Lv )	
 	local eff = Lv * 3	
 	local Hint ="Gem Bonus Strength +"..eff	
 	return Hint	
 end
-
-function ItemHint_ZJS( Lv )	
+function ItemHint_ChippedGemOfRage( Lv )	
 	local eff = Lv * 4	
 	local Hint ="Gem Bonus Strength +"..eff	
 	return Hint	
 end
-
-function ItemHint_QLS( Lv )	
+function ItemHint_BrokenGemOfSoul( Lv )	
 	local eff = Lv * 2	
 	local Hint ="Gem Bonus Spirit +"..eff	
 	return Hint	
 end
-
-function ItemHint_QYS( Lv )	
+function ItemHint_CrackedGemOfSoul( Lv )	
 	local eff = Lv * 3	
 	local Hint ="Gem Bonus Spirit +"..eff	
 	return Hint	
 end
-
-function ItemHint_QJS( Lv )	
+function ItemHint_ChippedGemOfSoul( Lv )	
 	local eff = Lv * 4	
 	local Hint ="Gem Bonus Spirit +"..eff	
 	return Hint	
 end
-function ItemHint_GGR ( Lv )
+
+--Great Gem
+function ItemHint_GreatGemOfRage ( Lv )
 	local eff = Lv * 6	
 	local Hint ="Gem Bonus Strength +"..eff	
 	return Hint	
 end 
-function ItemHint_GGS ( Lv )
+function ItemHint_GreatGemOfSoul ( Lv )
 	local eff = Lv * 6	
 	local Hint ="Gem Bonus Spirit +"..eff	
 	return Hint	
 end 
-function ItemHint_GGOS ( Lv )
+function ItemHint_GreatGemOfStriking ( Lv )
 	local eff = Lv * 6	
 	local Hint ="Added Accuracy +"..eff	
 	return Hint	
 end 
-function ItemHint_GGC ( Lv )
+function ItemHint_GreatGemOfColossus ( Lv )
 	local eff = Lv * 6	
 	local Hint ="Gem Bonus Constitution +"..eff	
 	return Hint	
 end 
-function ItemHint_GGW ( Lv )
+function ItemHint_GreatGemOfTheWind ( Lv )
 	local eff = Lv * 6	
 	local Hint ="Gem Bonus Agility +"..eff	
 	return Hint	
 end 
 
+--Tempest Gem
+function ItemHint_TempestGem ( Lv )
+	local eff = Lv * 40	
+	local Hint ="Gem Bonus Attack Speed +"..eff	
+	return Hint	
+end 
+function ItemHint_GaleGem ( Lv )
+	local eff = Lv * 30	
+	local Hint ="Gem Bonus Movement Speed +"..eff	
+	return Hint	
+end 
+function ItemHint_KingGem ( Lv )
+	local eff = Lv * 500	
+	local Hint ="Gem Bonus Attack +"..eff	
+	return Hint	
+end 
+function ItemHint_QueenGem ( Lv )
+	local eff = Lv * 15	
+	local Hint ="Gem Bonus Spirit +"..eff	
+	return Hint	
+end 

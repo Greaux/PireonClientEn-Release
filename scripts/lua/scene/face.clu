@@ -92,10 +92,6 @@ UI_LoadHeadSayFaceImage( 59, 2, 50, 50, "texture/ui/brow/59.tga", 64, 64, 0, 0 )
 UI_LoadHeadSayFaceImage( 60, 2, 50, 50, "texture/ui/brow/60.tga", 64, 64, 0, 0 )
 UI_LoadHeadSayFaceImage( 61, 2, 50, 50, "texture/ui/brow/61.tga", 64, 64, 0, 0 )
 
---UI_LoadHeadSayFaceImage( 11, 2, 50, 50, "texture/ui/brow/brow11.tga", 64, 64, 0, 0)
---UI_LoadHeadSayFaceImage( 12, 2, 50, 50, "texture/ui/brow/brow12.tga", 64, 64, 0, 0 )
-
-
 --　血条
 UI_LoadHeadSayLifeImage( 60, 5, "texture/ui/system/life.tga", 60, 5, 0, 0, TRUE )
 --  对话框
@@ -107,7 +103,7 @@ UI_LoadHeadSayLifeImage( 60, 5, "texture/ui/system/life.tga", 60, 5, 0, 0, TRUE 
 UI_LoadHeadSaySayImage( 206, 75, "texture/ui/system/dialog.tga", 206, 75, 7, 3, TRUE )
 UI_LoadHeadSayMouseImage( 9, 9 , "texture/ui/system/dialog.tga", 9, 9, 215,79, TRUE )
 
---  装载摆摊的三张图片
-UI_LoadHeadSayShopImage( 0,  15, 34, "texture/ui/BoothName.tga", 15, 34, 0, 0 )
-UI_LoadHeadSayShopImage( 1,  1, 34, "texture/ui/BoothName.tga", 1, 34, 18, 0 )
-UI_LoadHeadSayShopImage( 2,  15, 34, "texture/ui/BoothName.tga", 15, 34, 22, 0 )
+-- sell
+UI_LoadHeadSayShopImage( 0,  31, 38, "texture/ui_po/frmTitleStall.png", 31, 38, 0, 0 )
+UI_LoadHeadSayShopImage( 1,  5, 38, "texture/ui_po/frmTitleStall.png", 5, 38, 36, 0 )
+UI_LoadHeadSayShopImage( 2,  31, 38, "texture/ui_po/frmTitleStall.png", 31, 38, 44, 0 )
